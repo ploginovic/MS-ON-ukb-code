@@ -41,7 +41,6 @@ snp_hla_data <- snp_hla_data[ , !(names(snp_hla_data)%in%snp_drops)]
 
 names(snp_hla_data)[names(snp_hla_data) == "IID"] = 'n_eid'
 names(snp_hla_data)[names(snp_hla_data) == "SCORE1_SUM"] = 'two_hla_snp'
-names(hla_data)[names(hla_data) == "X8_hla_grs"] = "eight_inter_hla"
 
 master_df <- merge(hla_data, snp_hla_data, by="n_eid")
 
