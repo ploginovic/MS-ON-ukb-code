@@ -1,6 +1,7 @@
-# MS-ON-ukb-code This repository contains a collection of codes used to generate MS-GRS 
+# MS-ON-ukb-code
+**This repository contains a collection of codes used to generate MS-GRS**
 
-HLA-GRS was created using ***direct_hla_interaction_score.ipynb*** and 2 SNPs scored in python (will merge these two files as a an .sh file, and will add an R file merging the results). Interaction HLA GRS is based on a 10-allele model reported by Moutsianas et al (2015) reported on page 15, section 3.0
+HLA-GRS was created using ***direct_hla_interaction_score.ipynb*** and 2 SNPs scored in PLINK2 using plink_twoHLA_snps.sh. Interaction HLA GRS is based on a 10-allele model reported by Moutsianas et al (2015, supplement page 15)
 
 non-HLA GRS was created using file ***nonhla_plink_2201.sh***
 
