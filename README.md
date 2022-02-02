@@ -1,5 +1,5 @@
 # MS-ON-ukb-code
-**This repository contains a collection of codes used to generate MS-GRS**
+## This repository contains a collection of codes used to generate MS-GRS**
 
 HLA-GRS was created using ***direct_hla_interaction_score.ipynb*** and 2 SNPs scored in PLINK2 using plink_twoHLA_snps.sh. Interaction HLA GRS is based on a 10-allele model reported by Moutsianas et al (2015, supplement page 15)
 
