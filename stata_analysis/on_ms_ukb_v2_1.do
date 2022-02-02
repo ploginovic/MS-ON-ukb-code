@@ -1,12 +1,11 @@
 /* This file is recreating stata phenotypic analysis in a more comprehensive way
 		*/
+clear 
 
-clear 		
 ******* Part 1 ******* Primary Care records analysis
 run "/slade/home/pl450/MS_GRS_overall_1412/stata_analysis/do_create_gp_dta.do"
 
 run "/slade/home/pl450/MS_GRS_overall_1412/stata_analysis/dis_hesin_create_dta.do"
-
 
 ******* Part 2 ******* Loading raw phenotype, first occurence, hes and gp records
 
@@ -16,7 +15,8 @@ set maxvar 64000
 * importing final .tsv file containing calculated GRS
 import delimited "/slade/home/pl450/MS_GRS_overall_1412/summedchr_nonhla_msgrs_p000001.tsv"
 
-* The following block uses raw phenotype data, containing self-reported diseases, icd10 diagnoses and many covariates, which are described in a separate file 
+* The following block uses raw phenotype data, containing self-reported diseases, icd10 diagnoses and many covariates, which are described in a separate file
+
 merge m:1 n_eid using "/slade/local/UKBB/phenotype_data/master/main_data/raw_data_2019.dta", keepusing(n_eid ts_53_0_0 n_52_0_0 n_31_0_0 n_34_0_0 n_189_0_0 n_22011_0_0 n_22012_0_0 n_21001_0_0 n_20002_* n_20009_* n_21000_0_0 n_22001_0_0 n_20116_0_0 s_40001_* s_40002_* ts_40000_* s_41204* n_22009_0_1-n_22009_0_8 n_22005_0_0 n_22004_0_0 n_22006_0_0 n_22010_0_0 n_100021_*) //Consider removing 41202 and similar, as no date is provided
 
 keep if _merge ==3 
@@ -28,14 +28,14 @@ merge 1:1 n_eid using "/slade/projects/UKBB/phenotype_data/master/main_data/ukb_
 keep if first_occ_merge ==3 
 drop first_occ_merge
 
-* Adding Mike's supplied list of ON patients from the GP records
+* Adding Mike's patients from the GP records, produced by .do code in line 6 of this file
 merge m:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/on_diag_gp.dta", nogenerate
 
 merge 1:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/ms_gp_only.dta", nogenerate
 
 merge 1:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/nutrit_on_to_remove.dta", nogenerate 
 
-
+* merging hesin files, produced in line 8 of this code
 merge 1:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/hes_data_on_ms/ON_hes_2609.dta", generate (hes_ON_merge)
 drop if hes_ON_merge ==2 
 
@@ -87,7 +87,6 @@ generate age_in_months = datediff(DOB, enrol_date, "m")
 
 generate enrol_age = datediff(DOB, enrol_date, "m")
 generate enrol_age_years = datediff(DOB, enrol_date, "y")
-
 
 
 ******* Part 3: analysing imported data for diagnoses and
@@ -230,7 +229,7 @@ generate age_hes_`dis'_months = datediff(DOB, date_1st_hes_`dis', "m")
 	generate earliest_`dis' = min(`dis'_prev_time, `dis'_inc_time) if `dis'_any ==1
 
 	generate aao_`dis' =.
-replace aao_`dis' = enrol_age + earliest_`dis' if `dis'_any ==1 /* This is true, as enrol_age is a positive value, prev_time_ON is a negative intiger (months before enrol_date), and inc_time_ON is a positive intiger */
+	replace aao_`dis' = enrol_age + earliest_`dis' if `dis'_any ==1 /* This is true, as enrol_age is a positive value, prev_time_ON is a negative intiger (months before enrol_date), and inc_time_ON is a positive intiger */
 }
 * Removing one case with MS self reported at 0.5 years 
 drop if aao_MS < 12*15
@@ -321,4 +320,3 @@ drop s_41202*
 drop s_41204_0_*
 drop fid 
 drop n_2200* */
-//TODO: drop if gp_nutritional_ON ==1  and drop if gp_aber_ON == 1 
