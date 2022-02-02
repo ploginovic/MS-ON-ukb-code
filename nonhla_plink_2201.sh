@@ -14,4 +14,4 @@ for i in {1..22}; do
 
 module load R
 
-Rscript demo_nonhla_merge_2201.r
+Rscript nonhla_hla_merge_2201.r
