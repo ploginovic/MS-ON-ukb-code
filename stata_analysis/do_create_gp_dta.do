@@ -41,7 +41,7 @@ drop value1 value2 value3 event_dt order_gp data_provider /* these values are mo
 rename read_2 read_2_aber_on
 rename read_3 read_3_aber_on
 
-save "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/nutrit_on_to_remove.dta", replace
+save "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/aber_on_to_remove.dta", replace
 clear
 
 ******* Creating True ON file 
