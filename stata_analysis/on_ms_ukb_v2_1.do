@@ -33,7 +33,7 @@ merge m:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/on
 
 merge 1:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/ms_gp_only.dta", nogenerate
 
-merge 1:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/nutrit_on_to_remove.dta", nogenerate 
+merge 1:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms/aber_on_to_remove.dta", nogenerate 
 
 * merging hesin files, produced in line 8 of this code
 merge 1:1 n_eid using "/slade/home/pl450/MS_GRS_overall_1412/hes_data_on_ms/ON_hes_2609.dta", generate (hes_ON_merge)
