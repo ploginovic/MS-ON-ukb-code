@@ -10,7 +10,7 @@ abs_path <- "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms"
 
 setwd(abs_path)
 
-file_list <- c("ms_thincodes.csv", "on_thincodes.csv", "aber_on_ukbcodes.csv")
+file_list <- c("ms_thincodes.csv", "on_thincodes.csv", "aber_on_ukbthincodes.csv")
 
 for (file in file_list) {
 
