@@ -9,6 +9,6 @@ non-HLA and HLA-GRS were merged using ***demo_nonhla_merge_2201.r***, which also
 
 phenotypic analysis was done in stata using ***on_ms_ukb_v2_1.do*** 
 
-Figures and subsequent ROC and survival analysis were performed in python ***NAME***
+Figures and subsequent ROC and survival analysis were performed in python ***final_step_analysis.ipynb***
 
 Moutsianas, L., Jostins, L., Beecham, A.H., Dilthey, A.T., Xifara, D.K., Ban, M., Shah, T.S., Patsopoulos, N.A., Alfredsson, L., Anderson, C.A. and Attfield, K.E., 2015. Class II HLA interactions modulate genetic risk for multiple sclerosis. Nature genetics, 47(10), p.1107.
