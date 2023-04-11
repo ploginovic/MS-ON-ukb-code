@@ -80,7 +80,7 @@ def plot_km(data, cut_off_dict, save_label = 'Unnamed',plot_label='', figsize = 
             group = group_label, i = len(group)))
         ax = kmf_model.plot(show_censors = True, censor_styles = {'ms': 1.3, 'marker': 'x'}, linewidth=0.9, color = color, fontsize=7)
     
-    ax.set_xlim([0.0, 40.0])
+    ax.set_xlim([0.0, 35.0])
     ax.set_ylim([0.0, 1.0])
     
     plt.title(plot_label, fontsize=7) 
