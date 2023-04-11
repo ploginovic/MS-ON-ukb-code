@@ -76,12 +76,12 @@ def survival_probability_calibration(model: RegressionFitter, df: pd.DataFrame, 
     #ax.set_title("Smoothed calibration curve of \npredicted vs observed probabilities of t ≤ %d mortality" % t0)
 
     color = "tab:red"
-    ax.plot(x, y, label="smoothed \ncalibration curve", color=color)
+    ax.plot(x, y, label="Calibration curve", color=color)
     
-    ax.set_xlabel("Predicted probability of \nt ≤ %d mortality" % t0)
+    ax.set_xlabel("Predicted probability of \nt ≤ %d MS" % t0)
     if left_y_axis == True:
        # ax.set_ylabel("Observed probability of \nt ≤ %d mortality" % t0, color=color)
-        ax.set_ylabel("Observed probability of \n mortality at t ≤ 5, 10, 20 years", color=color)
+        ax.set_ylabel("Observed probability of \n MS at t ≤ 5, 10, 20 years", color=color)
     ax.tick_params(axis="y", labelcolor=color)
     
     ax.set_xlim([0,0.75])
