@@ -5,8 +5,7 @@ lapply( dbListConnections( dbDriver( drv = "MySQL")), dbDisconnect)
 
 pwd <- .rs.askForPassword("Database Password:")
 
-
-abs_path <- "/slade/home/pl450/MS_GRS_overall_1412/gp_records_on_ms"
+abs_path <- "~/gp_records_on_ms"
 
 setwd(abs_path)
 
