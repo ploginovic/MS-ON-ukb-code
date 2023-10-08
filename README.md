@@ -6,7 +6,7 @@ HLA-GRS was created using ***direct_hla_interaction_score.ipynb*** and 2 SNPs sc
 
 non-HLA GRS was created using file ***nonhla_plink_2201.sh***
 
-non-HLA and HLA-GRS were merged using ***demo_nonhla_merge_2201.r***, which also produced final .tsv file used in stata analysis later
+non-HLA and HLA-GRS were merged using ***demo_nonhla_merge_2201.r***, which also produced final .csv file used in stata analysis later
 
 phenotypic analysis was done in stata using ***on_ms_ukb_v2_1.do*** 
 
