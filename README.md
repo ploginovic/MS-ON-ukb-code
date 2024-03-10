@@ -1,5 +1,5 @@
 # MS-ON-ukb-code
-## Paper available at https://www.nature.com/articles/s41467-024-44917-9; Model available at https://ploginovic.shinyapps.io/ms_grs_predict/ and mspredictor.com;
+## Paper available [here](https://www.nature.com/articles/s41467-024-44917-9); Model available at https://ploginovic.shinyapps.io/ms_grs_predict/ and [mspredictor.com](https://mspredictor.com);
 ### This repository contains scripts used to generate MS-GRS and assess it in the context of undifferentiated Optic Neuritis in UKBB, replicated in FinnGen (Finland) and Geisinger-Regeneron (DiscovEHR)
 
 HLA-GRS was created using ***direct_hla_interaction_score.ipynb*** and 2 SNPs scored in PLINK2 using plink_twoHLA_snps.sh. Interaction HLA GRS is based on a 10-allele model reported by Moutsianas et al (2015, supplement page 15)
